@@ -1,0 +1,15 @@
+loadbalancer:
+  listen_address: ":8080"
+  algorithm: "round_robin"  # Options: round_robin, least_connections
+
+backends:
+  - address: "localhost"
+    port: 8081
+  - address: "localhost"
+    port: 8082
+  - address: "localhost"
+    port: 8083
+
+healthcheck:
+  interval: 30s
+  timeout: 5s 
